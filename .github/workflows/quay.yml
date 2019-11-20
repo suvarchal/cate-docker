@@ -49,7 +49,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        REGISTRY: quay.io
+        REGISTRY: quay.io/bcdev
         REPOSITORY: cate
         IMAGE_TAG: ${{ github.sha }}
       run: |
