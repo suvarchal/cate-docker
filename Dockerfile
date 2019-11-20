@@ -1,1 +1,26 @@
-FROM ubuntu:latest
+FROM continuumio/miniconda3:latest
+
+ARG CATE_VERSION=2.0.0
+ARG CATE_USER_NAME=cate
+
+ENV CATE_VERSION=${CATE_VERSION}
+ENV USER_NAME=${CATE_USER_NAME}
+
+LABEL maintainer="helge.dzierzon@brockmann-consult.de"
+LABEL name=cate
+LABEL version=${CATE_VERSION}
+
+RUN groupadd -g 1000 ${CATE_USER_NAME}
+RUN useradd -u 1000 -g 1000 -ms /bin/bash ${CATE_USER_NAME}
+RUN mkdir /workspace && chown ${CATE_USER_NAME}.${CATE_USER_NAME} /workspace
+RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
+
+RUN conda create -n cate -c ccitools -c conda-forge cate-cli=${CATE_VERSION}
+
+WORKDIR /workspace
+
+RUN conda init
+
+RUN echo "conda activate cate" >> ~/.bashrc
+
+ENTRYPOINT ["/bin/bash", "-c"]
