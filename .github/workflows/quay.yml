@@ -41,7 +41,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Configure AWS credentials
+    - name: Login to quay
       id: login-quay
       run:
         docker login -u ${{ secrets.QUAY_USERNAME }} -p ${{ secrets.QUAY_PASSWORD }} quay.io
