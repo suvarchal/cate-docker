@@ -29,6 +29,7 @@ on:
     branches:
       - master
       - stage_*
+      - v*
 
 name: Deploy to quay.io
 
