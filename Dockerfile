@@ -15,6 +15,8 @@ RUN useradd -u 1000 -g 1000 -ms /bin/bash ${CATE_USER_NAME}
 RUN mkdir /workspace && chown ${CATE_USER_NAME}.${CATE_USER_NAME} /workspace
 RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
 
+USER ${CATE_USER_NAME}
+
 RUN conda create -n cate -c ccitools -c conda-forge cate-cli=${CATE_VERSION}
 
 WORKDIR /workspace
