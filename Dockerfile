@@ -10,7 +10,7 @@ LABEL maintainer="helge.dzierzon@brockmann-consult.de"
 LABEL name=cate
 LABEL version=${CATE_VERSION}
 
-SHELL ['bash', '-c']
+SHELL ["bash", "-c"]
 
 RUN groupadd -g 1000 ${CATE_USER_NAME}
 RUN useradd -u 1000 -g 1000 -ms /bin/bash ${CATE_USER_NAME}
