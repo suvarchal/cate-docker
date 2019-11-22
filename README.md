@@ -36,7 +36,7 @@ Therefore, use the following steps to release a new cate docker image:
 - Edit the Dockerfile and change `ARG CATE_VERSION=[new_version]`
 - Push the changes to your branch
 - Monitor building process on quay.io
-- If the build succeeds, create a Pull request and set reviewers
+- If the build succeeds, create a Pull request and request reviewers
 - Once approved merge the PR
 - Check again whether the build succeeds. Be aware that from  that moment
   your build will be pulled as version `latest`
