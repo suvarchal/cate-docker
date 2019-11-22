@@ -17,7 +17,12 @@ RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
 
 USER ${CATE_USER_NAME}
 
-RUN conda create -n cate -c ccitools -c conda-forge cate-cli=${CATE_VERSION}
+# RUN conda create -n cate -c ccitools -c conda-forge cate-cli=${CATE_VERSION}
+
+RUN git clone https://github.com/CCI-Tools/cate /tmp/cate
+WORKDIR /tmp/cate
+RUN conda env create
+RUN source activate cate-env && python setup install
 
 WORKDIR /workspace
 
