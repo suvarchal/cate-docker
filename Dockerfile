@@ -30,6 +30,6 @@ WORKDIR /workspace
 
 RUN conda init
 
-RUN echo "conda activate cate" >> ~/.bashrc
+RUN echo "conda activate cate-env" >> ~/.bashrc
 
 ENTRYPOINT ["/bin/bash", "-c"]
