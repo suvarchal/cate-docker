@@ -24,7 +24,7 @@ USER ${CATE_USER_NAME}
 RUN git clone https://github.com/CCI-Tools/cate /tmp/cate
 WORKDIR /tmp/cate
 RUN conda env create
-RUN source activate cate-env && python setup install
+RUN source activate cate-env && python setup.py install
 
 WORKDIR /workspace
 
