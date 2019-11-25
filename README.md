@@ -18,7 +18,7 @@ This will open a bash session with an activated cate Python environment. However
 if you want to make this session a bitmore useful, mount a volume e.g the current directory:
 
 ```shell script
-docker run -it -v $PWD:/workspace quay.io/bcdev/cate:stage_dzelge_init_cate_docker bash
+docker run -it -v $PWD:/workspace quay.io/bcdev/cate bash
 ```
 
 The following docker-compose configuration can be used to run cate, here, its web service.
