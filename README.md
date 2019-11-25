@@ -34,7 +34,6 @@ services:
       - 4000
     ports:
       - 4000:4000
-    entrypoint: ""
     command: ["/bin/bash", "-c", "source activate cate-env && cate-webapi-start -v -p 4000 -a 0.0.0.0"] 
 ```
 
