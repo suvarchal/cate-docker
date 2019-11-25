@@ -33,4 +33,4 @@ RUN conda init
 
 RUN echo "conda activate cate-env" >> ~/.bashrc
 
-ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["/bin/bash"]

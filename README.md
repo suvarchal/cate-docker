@@ -28,7 +28,7 @@ The following docker-compose configuration can be used to run cate, here, its we
 version: "3.7"
 services:
   cate:
-    image: quay.io/bcdev/cate:stage_dzelge_init_cate_docker
+    image: quay.io/bcdev/cate
     user: cate
     expose:
       - 4000
