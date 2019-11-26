@@ -4,7 +4,7 @@ ARG CATE_VERSION=2.1.0.dev0
 ARG CATE_USER_NAME=cate
 
 ENV CATE_VERSION=${CATE_VERSION}
-ENV USER_NAME=${CATE_USER_NAME}
+ENV CATE_USER_NAME=${CATE_USER_NAME}
 
 LABEL maintainer="helge.dzierzon@brockmann-consult.de"
 LABEL name=cate
