@@ -1,6 +1,6 @@
 FROM continuumio/miniconda3:latest
 
-ARG CATE_VERSION=2.0.0
+ARG CATE_VERSION=2.1.0.dev0
 ARG CATE_USER_NAME=cate
 
 ENV CATE_VERSION=${CATE_VERSION}
