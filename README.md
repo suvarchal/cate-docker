@@ -37,6 +37,36 @@ services:
     command: ["/bin/bash", "-c", "source activate cate-env && cate-webapi-start -v -p 4000 -a 0.0.0.0"] 
 ```
 
+cate-docker has been used in K8s deployments. 
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cate-serve
+  labels:
+    app: cate-serve
+spec:
+  selector:
+    matchLabels:
+      app: cate-serve
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: cate-serve
+    spec:
+      containers:
+        - image: quay.io/bcdev/cate
+          name: cate-serve
+          command: ["/bin/bash"]
+          args: ["-c", "source activate cate-env && cate-webapi-start -v -p 4000 -a 0.0.0.0"]
+          ports:
+            - containerPort: 4000
+              name: cate-serve
+```
+
 
 ## Release process
 
