@@ -3,11 +3,12 @@ ARG CATE_PYTHON_DEPS_VERSION
 FROM quay.io/bcdev/cate-python-deps:${CATE_PYTHON_DEPS_VERSION}
 
 ARG CATE_VERSION
+ARG CATE_BUILD
 
 LABEL maintainer="helge.dzierzon@brockmann-consult.de"
 LABEL name=cate
 LABEL cate_version=${CATE_VERSION}
 
-RUN source activate cate-env && pip install git+https://github.com/CCI-Tools/cate
+RUN source activate cate-env && pip install git+https://github.com/CCI-Tools/cate.git@master_dev_3
 
 CMD ["/bin/bash", "-c", "source activate cate-env && cate-webapi-start -v -p 4000 -a 0.0.0.0"]
