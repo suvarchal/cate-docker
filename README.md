@@ -68,7 +68,22 @@ spec:
 ```
 
 
-## Release process
+## Release process Python Base Image
+
+The purpose of teh Python base image is to deliver and 
+
+- Clone or fork [cate-docker repositiry](https://github.com/CCI-Tools/cate-docker.
+- Create a new branch called [your_user_name]_[new_version]
+- Change Miniconda Version and increase CATE_PYTHON_BASE_VERSION in cate-python-base/Dockerfile
+- Push and commit your branch
+- Monitor building process on that has been started on quay.io 
+- If the build succeeds, create a pull request and request reviewers
+- Once approved merge the PR
+- Check again whether the build succeeds. Be aware that from that moment
+  your the version `latest` will be updated
+- Change cat
+
+## Release process case-base
 
 cate-docker is hosted on quay.io. quay.io is configured so it automatically starts building processes on each 
 push to [cate-dcker's GitHub](https://github.com/CCI-Tools/cate-docker). The docker image version 
@@ -77,7 +92,7 @@ tag is set by the name of the branch which includes version and release tags.
 Therefore, use the following steps to release a new cate docker image:
 
 - Clone or fork [cate-docker repositiry](https://github.com/CCI-Tools/cate-docker.
-- Creata a new branch called [your_user_name]_[new_version]
+- Create a new branch called [your_user_name]_[new_version]
 - Make sure that the cate version you are building for has been released
 - Edit the Dockerfile and change `ARG CATE_VERSION=[new_version]` reflecting the new version tag
 - Push the changes to your branch
@@ -86,8 +101,6 @@ Therefore, use the following steps to release a new cate docker image:
 - Once approved merge the PR
 - Check again whether the build succeeds. Be aware that from that moment
   your the version `latest` will be updated
-- Create a `tag` named `[new_version]` in GitHub
-- Also this version will be built and be downloadable as `quay.io/bcdev/cate:[new_version]`
 
 
  

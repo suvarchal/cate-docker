@@ -1,0 +1,30 @@
+ARG MINICONDA_VERSION
+
+FROM continuumio/miniconda3:$MINICONDA_VERSION
+
+ARG CATE_PYTHON_BASE_VERSION
+
+LABEL maintainer="helge.dzierzon@brockmann-consult.de"
+LABEL name="cate python minoconda base"
+LABEL cate_python_base_version=${CATE_PYTHON_BASE_VERSION}
+
+SHELL ["/bin/bash", "-c"]
+
+# RUN apt-get -y update && apt-get -y upgrade
+
+#RUN groupadd -g 1000 ${CATE_USER_NAME}
+#RUN useradd -u 1000 -g 1000 -ms /bin/bash ${CATE_USER_NAME}
+#RUN mkdir /workspace && chown ${CATE_USER_NAME}.${CATE_USER_NAME} /workspace
+# RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
+
+RUN mkdir /workspace
+
+USER ${CATE_USER_NAME}
+
+WORKDIR /workspace
+
+RUN conda init
+
+RUN echo "conda activate cate-env" >> ~/.bashrc
+
+CMD ["/bin/bash"]
