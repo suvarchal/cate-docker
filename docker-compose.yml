@@ -25,4 +25,4 @@ services:
       args:
         - CATE_VERSION=${CATE_VERSION}
         - CATE_PYTHON_DEPS_VERSION=${CATE_PYTHON_DEPS_VERSION}
-    image: quay.io/bcdev/cate-web-api:${CATE_VERSION}
+    image: quay.io/bcdev/cate-web-api:${CATE_VERSION}.build${CATE_BUILD}
