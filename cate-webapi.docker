@@ -12,7 +12,7 @@ LABEL name=cate
 LABEL cate_version=${CATE_VERSION}
 LABEL cate_build=${CATE_BUILD}
 
-RUN mkdir -p ${$CATE_USER_ROOT}
+RUN mkdir -p ${CATE_USER_ROOT}
 RUN source activate cate-env && pip install git+https://github.com/CCI-Tools/cate.git@${CATE_BRANCH}
 
 CMD ["/bin/bash", "-c", "source activate cate-env && cate-webapi-start -v -p 4000 -a 0.0.0.0"]
