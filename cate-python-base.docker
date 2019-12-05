@@ -17,12 +17,11 @@ SHELL ["/bin/bash", "-c"]
 #RUN mkdir /workspace && chown ${CATE_USER_NAME}.${CATE_USER_NAME} /workspace
 # RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
 
-RUN mkdir /workspaces
-
 USER ${CATE_USER_NAME}
 
-WORKDIR /workspaces
+WORKDIR /workspace
 
+RUN mkdir
 RUN conda init
 
 RUN echo "conda activate cate-env" >> ~/.bashrc
