@@ -21,8 +21,8 @@ services:
   cate-web-api:
     build:
       context: .
-      dockerfile: cate-web-api.docker
+      dockerfile: cate-webapi.docker
       args:
         - CATE_VERSION=${CATE_VERSION}
         - CATE_PYTHON_DEPS_VERSION=${CATE_PYTHON_DEPS_VERSION}
-    image: quay.io/bcdev/cate-web-api:${CATE_VERSION}.build${CATE_BUILD}
+    image: quay.io/bcdev/cate-webapi:${CATE_VERSION}.build${CATE_BUILD}
