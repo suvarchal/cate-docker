@@ -21,7 +21,6 @@ USER ${CATE_USER_NAME}
 
 WORKDIR /workspace
 
-RUN mkdir
 RUN conda init
 
 RUN echo "conda activate cate-env" >> ~/.bashrc
