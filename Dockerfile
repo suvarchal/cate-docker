@@ -27,7 +27,7 @@ RUN conda init
 
 RUN echo "conda activate cate-env" >> ~/.bashrc
 
-RUN git clone https://github.com/CCI-Tools/cate && git checkout ${CATE_BRANCH}
+RUN git clone https://github.com/CCI-Tools/cate && cd cate && git checkout ${CATE_BRANCH}
 RUN conda env create -f cate/environment.yml
 RUN conda clean -afy
 RUN conda info --envs
