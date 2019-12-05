@@ -5,6 +5,7 @@ FROM quay.io/bcdev/cate-python-deps:${CATE_PYTHON_DEPS_VERSION}
 ARG CATE_VERSION
 ARG CATE_BUILD
 ARG CATE_BRANCH
+ENV CATE_USER_ROOT=/
 
 LABEL maintainer="helge.dzierzon@brockmann-consult.de"
 LABEL name=cate
