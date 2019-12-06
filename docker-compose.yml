@@ -24,5 +24,9 @@ services:
       dockerfile: cate-webapi.docker
       args:
         - CATE_VERSION=${CATE_VERSION}
+        - CATE_BRANCH=${CATE_BRANCH}
+        - CATE_BUILD=${CATE_BUILD}
         - CATE_PYTHON_DEPS_VERSION=${CATE_PYTHON_DEPS_VERSION}
     image: quay.io/bcdev/cate-webapi:${CATE_VERSION}.build${CATE_BUILD}
+    ports:
+      - 4000:4000
