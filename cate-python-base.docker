@@ -17,8 +17,6 @@ SHELL ["/bin/bash", "-c"]
 #RUN mkdir /workspace && chown ${CATE_USER_NAME}.${CATE_USER_NAME} /workspace
 # RUN chown -R ${CATE_USER_NAME}.${CATE_USER_NAME} /opt/conda
 
-RUN mkdir /workspace
-
 USER ${CATE_USER_NAME}
 
 WORKDIR /workspace
